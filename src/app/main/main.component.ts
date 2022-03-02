@@ -11,7 +11,7 @@ import { ICategory } from '../Shared Classes and types/i-category';
 export class MainComponent implements OnInit {
 
   constructor() {
-    this.Discount=DiscountOffers.ten
+    this.Discount=DiscountOffers.fifteen
     this.ProductList=[{
       id:1,
     name:'waleed',
@@ -26,7 +26,8 @@ export class MainComponent implements OnInit {
       img: ""
     }]
     this.Storename='adidas'
-    this.StoreLogo='../../assets/logo-paypal.png'
+    this.StoreLogo='../../assets/exclusive.png'
+    
    }
     
     Discount:DiscountOffers
@@ -34,8 +35,9 @@ export class MainComponent implements OnInit {
     StoreLogo!: string
     ProductList!: iProducts[] 
     CategoryList!: ICategory[]
-    ClientName!: String
+    ClientName="Waleed"
     IsPurshased!: Boolean
+    NoDiscount=true
 
 
   ngOnInit(): void {

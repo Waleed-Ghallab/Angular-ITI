@@ -4,6 +4,14 @@
     {{Storename}}
 </h1>
 <br>
-<img [src]="StoreLogo">
+<img [src]="StoreLogo" width="150" height="100">
 <br>
-<h3> We offer an explicit discount of:   {{Discount}} </h3>
+<ng-template #offer>
+    <h3> We offer an explicit discount of:   {{Discount}} </h3>
+</ng-template>
+<h3 *ngIf="NoDiscount; then offer">
+
+</h3>
+
+<br>
+<input type="text" [(ngModel)]="ClientName"> {{ClientName}}
