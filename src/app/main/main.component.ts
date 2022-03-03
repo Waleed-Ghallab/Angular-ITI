@@ -14,19 +14,45 @@ export class MainComponent implements OnInit {
     this.Discount=DiscountOffers.fifteen
     this.ProductList=[{
       id:1,
-    name:'waleed',
-    quantity:2,
+    name:'product 1',
+    quantity:18,
     price: 500,
     img: ""
     },{
-      id:1,
-      name:'waleed',
-      quantity:2,
-      price: 500,
+      id:2,
+      name:'product 2',
+      quantity:66,
+      price: 750,
       img: ""
+    },{
+      id:3,
+      name:'product 3',
+      quantity:133,
+      price: 818,
+      img: ""
+    },{
+      id:4,
+      name:'product 4',
+      quantity:600,
+      price: 150,
+      img: ""
+    }]
+    this.CategoryList=[{
+      id:1,
+      name:"shoes"
+    },{
+      id:2,
+      name:"pants"
+    },{
+      id:3,
+      name:"Shirts"
+    },{
+      id:4,
+      name:"Accessories"
     }]
     this.Storename='adidas'
     this.StoreLogo='../../assets/exclusive.png'
+    this.checkDiscount(this.Discount)
     
    }
     
@@ -37,7 +63,18 @@ export class MainComponent implements OnInit {
     CategoryList!: ICategory[]
     ClientName="Waleed"
     IsPurshased!: Boolean
-    NoDiscount=true
+    NoDiscount!:Boolean 
+    checkDiscount(Discount:DiscountOffers) {
+      if(this.Discount==DiscountOffers.No){
+        this.NoDiscount=false;
+      }else{
+        this.NoDiscount=true;
+      }
+    }
+    isPurchased=true
+    toggle(isPurchased:Boolean){
+      this.isPurchased=false;
+    }
 
 
   ngOnInit(): void {
