@@ -1,17 +1,60 @@
 <p>main works!</p>
 <br>
-<h1>
-    {{Storename}}
-</h1>
-<br>
-<img [src]="StoreLogo" width="150" height="100">
-<br>
-<ng-template #offer>
-    <h3> We offer an explicit discount of:   {{Discount}} </h3>
-</ng-template>
-<h3 *ngIf="NoDiscount; then offer">
+<div class="row">
+    <div class="col-4">
+        <h1>
+            {{Storename}}
+        </h1>
+        <br>
+        <img [src]="StoreLogo" width="150" height="100">
+        <br>
 
-</h3>
+        <ng-template #offer>
+            <h3> We offer an explicit discount of:   {{Discount}} </h3>
+        </ng-template>
+        <h3 *ngIf="NoDiscount; then offer">
 
-<br>
-<input type="text" [(ngModel)]="ClientName"> {{ClientName}}
+        </h3>
+
+        <br>
+        <input type="text" [(ngModel)]="ClientName"> {{ClientName}}
+    </div>
+    <div class="col-4">
+        <label for="Category">Categories:</label>
+        <select>
+        <option *ngFor="let item of CategoryList">{{item.name}}</option>
+        </select> <br><br><br><br><br>
+    <div *ngIf="isPurchased; then alter; else cart">
+    
+    </div>
+    <ng-template #cart>
+        <table border="3px" align="center">
+        <tr>
+            <th>Name</th>
+            <th *ngFor="let item of ProductList">{{item.name}}</th>
+          
+        </tr>
+        <tr>
+            <th>Quantity</th>
+          <td *ngFor="let item of ProductList">{{item.quantity}}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+          <td *ngFor="let item of ProductList">{{item.price}}</td>
+        </tr>
+    </table>
+    <div align="center">
+        
+        <input type="button" value="Buy" (click)="toggle(isPurchased)">
+    </div>
+    </ng-template>
+    <ng-template #alter>
+        <h3>
+            Thanks for purchasing from our Store {{ClientName}}
+        </h3>
+    </ng-template>
+    
+        
+          
+    </div>
+</div>
