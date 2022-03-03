@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { FormsModule } from '@angular/forms';
+import { PrecentagePipe } from './precentage.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    StyleBindingComponent
+    StyleBindingComponent,
+    PrecentagePipe
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@
         <br>
 
         <ng-template #offer>
-            <h3> We offer an explicit discount of:   {{Discount}} </h3>
+            <h3> We offer an explicit discount of:   {{Discount|precentage}} </h3>
         </ng-template>
         <h3 *ngIf="NoDiscount; then offer">
 
@@ -24,7 +24,7 @@
         <select>
         <option *ngFor="let item of CategoryList">{{item.name}}</option>
         </select> <br><br><br><br><br>
-    <div *ngIf="isPurchased; then alter; else cart">
+    <div *ngIf="isPurchased; then cart; else alter">
     
     </div>
     <ng-template #cart>
@@ -53,8 +53,8 @@
             Thanks for purchasing from our Store {{ClientName}}
         </h3>
     </ng-template>
-    
-        
-          
+    </div>
+    <div class="col-4">
+        <h2>upperCase Pipe: {{Storename|uppercase}}</h2>
     </div>
 </div>

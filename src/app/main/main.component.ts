@@ -11,7 +11,7 @@ import { ICategory } from '../Shared Classes and types/i-category';
 export class MainComponent implements OnInit {
 
   constructor() {
-    this.Discount=DiscountOffers.fifteen
+    this.Discount=DiscountOffers.ten
     this.ProductList=[{
       id:1,
     name:'product 1',
