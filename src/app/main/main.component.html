@@ -43,16 +43,14 @@
           <td *ngFor="let item of ProductList">{{item.price}}</td>
         </tr>
     </table>
-    <div align="center">
-        
-        <input type="button" value="Buy" (click)="toggle(isPurchased)">
-    </div>
     </ng-template>
     <ng-template #alter>
         <h3>
             Thanks for purchasing from our Store {{ClientName}}
         </h3>
     </ng-template>
+    <br>
+    <input type="button" value="Buy" (click)="toggle(isPurchased)">
     </div>
     <div class="col-4">
         <h2>upperCase Pipe: {{Storename|uppercase}}</h2>

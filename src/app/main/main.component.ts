@@ -72,8 +72,8 @@ export class MainComponent implements OnInit {
       }
     }
     isPurchased=true
-    toggle(isPurchased:Boolean){
-      this.isPurchased=false;
+    toggle(isPurchased:Boolean):void{
+      this.isPurchased=!this.isPurchased;
     }
 
 
