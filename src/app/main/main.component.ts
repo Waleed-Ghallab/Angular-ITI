@@ -1,7 +1,11 @@
+//import { EventEmitter } from 'stream';
 import { DiscountOffers } from './../Shared Classes and types/discount-offers';
 import { Component, OnInit } from '@angular/core';
 import { iProducts } from '../Shared Classes and types/iProducts';
 import { ICategory } from '../Shared Classes and types/i-category';
+import { Input } from '@angular/core';
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -10,6 +14,7 @@ import { ICategory } from '../Shared Classes and types/i-category';
 })
 export class MainComponent implements OnInit {
 
+  
   constructor() {
     this.Discount=DiscountOffers.ten
     this.ProductList=[{
@@ -53,7 +58,6 @@ export class MainComponent implements OnInit {
     this.Storename='adidas'
     this.StoreLogo='../../assets/exclusive.png'
     this.checkDiscount(this.Discount)
-    
    }
     
     Discount:DiscountOffers
@@ -75,6 +79,7 @@ export class MainComponent implements OnInit {
     toggle(isPurchased:Boolean):void{
       this.isPurchased=!this.isPurchased;
     }
+    
 
 
   ngOnInit(): void {

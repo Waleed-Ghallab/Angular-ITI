@@ -1,7 +1,9 @@
+import { MainComponent } from './main/main.component';
 import { DiscountOffers } from './Shared Classes and types/discount-offers';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { iProducts } from './Shared Classes and types/iProducts';
 import { ICategory } from './Shared Classes and types/i-category';
+
 @Component({
   selector: 'myfirstapp-root',
   templateUrl: './app.component.html',
